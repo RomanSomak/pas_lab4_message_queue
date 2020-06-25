@@ -10,6 +10,13 @@ import java.nio.charset.StandardCharsets;
 public class Subscriber {
 
     public static void main(String[] args) throws Exception {
+        String HOST = "localhost";
+        Integer PORT = 5672;
+
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost(HOST);
+        factory.setPort(PORT);
+
         Connection connection = new ConnectionFactory().newConnection();
         Channel channel = connection.createChannel();
 
